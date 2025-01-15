@@ -1,0 +1,33 @@
+{
+  "name": "my-model-training-extension",
+  "version": "0.0.1",
+  "description": "Обучение модели на базе своего коде",
+  "publisher": "Rus7Iv",
+  "main": "extension.js",
+  "activationEvents": [
+    "onCommand:extension.trainModel"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.trainModel",
+        "title": "Обучение модели"
+      }
+    ]
+  },
+  "dependencies": {
+    "python-shell": "^3.0.1"
+  },
+  "devDependencies": {
+    "vscode": "^1.1.37"
+  },
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
