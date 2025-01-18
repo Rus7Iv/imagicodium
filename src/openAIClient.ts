@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const OPENAI_API_URL = 'https://api.ai21.com/studio/v1/chat/completions';
 
 export class OpenAIClient {
     private apiKey: string;
@@ -16,15 +16,18 @@ export class OpenAIClient {
             const response = await axios.post(
                 OPENAI_API_URL,
                 {
-                    model: "gpt-3.5-turbo",
                     messages: [
                         {
                             role: "user",
-                            content: `Напиши код на языке ${language} для: ${prompt}`
+                            content: `Напиши код на языке ${language} для: ${prompt}. Учти, что нужно написать только код и ничего кроме кода (без ковычек и подписей)`
                         }
                     ],
-                    temperature: 0.7,
-                    max_tokens: 1000
+                    model: "jamba-instruct-preview",
+                    temperature: 0.5,
+                    max_tokens: 1024,
+                    top_p: 1,
+                    stream: false,
+                    stop: null
                 },
                 {
                     headers: {
@@ -34,7 +37,10 @@ export class OpenAIClient {
                 }
             );
     
-            return response.data.choices[0].message.content;
+            const rawCode = response.data.choices[0].message.content;
+            const cleanedCode = rawCode.replace(/```[^\n]*\n?/g, '').trim();
+    
+            return cleanedCode;
         } catch (error) {
             console.error('Error generating code:', error);
             throw error;
