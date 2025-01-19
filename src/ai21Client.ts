@@ -42,7 +42,7 @@ export class Ai21Client {
     
             return cleanedCode;
         } catch (error) {
-            console.error('Error generating code:', error);
+            console.error('Ошибка генерации кода:', error);
             throw error;
         }
     }
