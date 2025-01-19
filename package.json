@@ -5,6 +5,11 @@
   "icon": "images/logo.png",
   "version": "0.0.5",
   "publisher": "Rus7Iv",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rus7Iv/transformerAI.git"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
