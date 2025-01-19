@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { OpenAIClient } from './openAIClient';
+import { Ai21Client } from './ai21Client';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -8,22 +8,22 @@ export function activate(context: vscode.ExtensionContext) {
 
     const secretsPath = path.join(context.extensionPath, 'secrets.json');
 
-    let openAIApiKey: string | undefined;
+    let ai21ApiKey: string | undefined;
     try {
         const secretsData = fs.readFileSync(secretsPath, 'utf-8');
         const secrets = JSON.parse(secretsData);
-        openAIApiKey = secrets.openAIApiKey;
+        ai21ApiKey = secrets.ai21ApiKey;
     } catch (error) {
         vscode.window.showErrorMessage('Failed to read secrets.json. Please check the file.');
         return;
     }
 
-    if (!openAIApiKey) {
-        vscode.window.showErrorMessage('OpenAI API key is not set. Please set it in secrets.json.');
+    if (!ai21ApiKey) {
+        vscode.window.showErrorMessage('AI21 Studio API key is not set. Please set it in secrets.json.');
         return;
     }
 
-    const openAIClient = new OpenAIClient(openAIApiKey);
+    const ai21Client = new Ai21Client(ai21ApiKey);
 
     let disposable = vscode.commands.registerCommand('transformerai.generateCode', async () => {
         const editor = vscode.window.activeTextEditor;
@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
         const language = document.languageId;
 
         try {
-            const generatedCode = await openAIClient.generateCode(commentLine, language);
+            const generatedCode = await ai21Client.generateCode(commentLine, language);
             editor.edit(editBuilder => {
                 editBuilder.insert(selection.end, `\n${generatedCode}`);
             });

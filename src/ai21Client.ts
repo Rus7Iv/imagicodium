@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const OPENAI_API_URL = 'https://api.ai21.com/studio/v1/chat/completions';
+const AI21_API_URL = 'https://api.ai21.com/studio/v1/chat/completions';
 
-export class OpenAIClient {
+export class Ai21Client {
     private apiKey: string;
 
     constructor(apiKey: string) {
@@ -14,7 +14,7 @@ export class OpenAIClient {
             await new Promise(resolve => setTimeout(resolve, 1000));
     
             const response = await axios.post(
-                OPENAI_API_URL,
+                AI21_API_URL,
                 {
                     messages: [
                         {
