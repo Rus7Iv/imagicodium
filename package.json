@@ -15,10 +15,24 @@
     "onCommand:transformerai.generateCode"
   ],
   "contributes": {
+    "configuration": {
+      "title": "transformerAI",
+      "properties": {
+        "transformerAI.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for AI21 Studio"
+        }
+      }
+    },
     "commands": [
       {
         "command": "transformerai.generateCode",
         "title": "Сгенерировать код по комментарию"
+      },
+      {
+        "command": "transformerai.setApiKey",
+        "title": "Установить ключ API для AI21 Studio"
       }
     ]
   },

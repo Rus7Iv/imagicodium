@@ -1,31 +1,28 @@
 import * as vscode from 'vscode';
 import { Ai21Client } from './ai21Client';
-import * as fs from 'fs';
-import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Extension "transformerai" is now active!');
+    let ai21Client: Ai21Client | null = null;
 
-    const secretsPath = path.join(context.extensionPath, 'secrets.json');
+    const initializeClient = () => {
+        const config = vscode.workspace.getConfiguration('transformerAI');
+        const ai21ApiKey = config.get<string>('apiKey');
 
-    let ai21ApiKey: string | undefined;
-    try {
-        const secretsData = fs.readFileSync(secretsPath, 'utf-8');
-        const secrets = JSON.parse(secretsData);
-        ai21ApiKey = secrets.ai21ApiKey;
-    } catch (error) {
-        vscode.window.showErrorMessage('Failed to read secrets.json. Please check the file.');
-        return;
-    }
+        if (ai21ApiKey) {
+            ai21Client = new Ai21Client(ai21ApiKey);
+        } else {
+            ai21Client = null;
+        }
+    };
 
-    if (!ai21ApiKey) {
-        vscode.window.showErrorMessage('AI21 Studio API key is not set. Please set it in secrets.json.');
-        return;
-    }
+    initializeClient();
 
-    const ai21Client = new Ai21Client(ai21ApiKey);
+    let generateCodeDisposable = vscode.commands.registerCommand('transformerai.generateCode', async () => {
+        if (!ai21Client) {
+            vscode.window.showErrorMessage('Ключ API не установлен. Пожалуйста, используйте команду "Установить ключ API для AI21 Studio"');
+            return;
+        }
 
-    let disposable = vscode.commands.registerCommand('transformerai.generateCode', async () => {
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             return;
@@ -43,11 +40,27 @@ export function activate(context: vscode.ExtensionContext) {
                 editBuilder.insert(selection.end, `\n${generatedCode}`);
             });
         } catch (error) {
-            vscode.window.showErrorMessage('Failed to generate code. Please check the console for more details.');
+            vscode.window.showErrorMessage('Ошибка генерации кода. Пожалуйста, проверьте консоль');
         }
     });
 
-    context.subscriptions.push(disposable);
+    let setApiKeyDisposable = vscode.commands.registerCommand('transformerai.setApiKey', async () => {
+        const apiKey = await vscode.window.showInputBox({
+            prompt: 'Введите ключ API для AI21 Studio',
+            placeHolder: 'API Key',
+            password: true
+        });
+
+        if (apiKey) {
+            const config = vscode.workspace.getConfiguration('transformerAI');
+            await config.update('apiKey', apiKey, vscode.ConfigurationTarget.Global);
+
+            initializeClient();
+            vscode.window.showInformationMessage('Ключ API успешно сохранён!');
+        }
+    });
+
+    context.subscriptions.push(generateCodeDisposable, setApiKeyDisposable);
 }
 
 export function deactivate() {}
