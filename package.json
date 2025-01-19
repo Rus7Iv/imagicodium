@@ -1,8 +1,9 @@
 {
   "name": "transformerai",
-  "displayName": "transformerAI",
-  "description": "Обучение модели на базе своего коде",
-  "version": "0.0.4",
+  "displayName": "TransformerAI Assistant",
+  "description": "Помощник для генерации кода",
+  "icon": "images/logo.png",
+  "version": "0.0.5",
   "publisher": "Rus7Iv",
   "engines": {
     "vscode": "^1.96.0"
