@@ -18,7 +18,10 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:transformerai.generateCode"
+    "onCommand:transformerai.generateCode",
+    "onCommand:transformerai.setApiKey",
+    "onCommand:transformerai.setProxy",
+    "onCommand:transformerai.disableProxy"
   ],
   "contributes": {
     "configuration": {
@@ -28,6 +31,11 @@
           "type": "string",
           "default": "",
           "description": "API key for AI21 Studio"
+        },
+        "transformerAI.proxy": {
+          "type": "object",
+          "default": null,
+          "description": "Proxy configuration (host, port, auth)"
         }
       }
     },
@@ -39,6 +47,14 @@
       {
         "command": "transformerai.setApiKey",
         "title": "Установить ключ API для AI21 Studio"
+      },
+      {
+        "command": "transformerai.setProxy",
+        "title": "Настроить прокси"
+      },
+      {
+        "command": "transformerai.disableProxy",
+        "title": "Отключить прокси"
       }
     ]
   },
