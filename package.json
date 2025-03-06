@@ -1,14 +1,14 @@
 {
-  "name": "transformerai",
-  "displayName": "TransformerAI Assistant",
-  "description": "Помощник для генерации кода",
+  "name": "imagicodium",
+  "displayName": "Imagicodium Assistant",
+  "description": "Code Generation Assistant",
   "icon": "images/logo.png",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "Rus7Iv",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rus7Iv/transformerAI.git"
+    "url": "https://github.com/Rus7Iv/imagicodium.git"
   },
   "engines": {
     "vscode": "^1.40.0"
@@ -18,21 +18,21 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:transformerai.generateCode",
-    "onCommand:transformerai.setApiKey",
-    "onCommand:transformerai.setProxy",
-    "onCommand:transformerai.disableProxy"
+    "onCommand:imagicodium.generateCode",
+    "onCommand:imagicodium.setApiKey",
+    "onCommand:imagicodium.setProxy",
+    "onCommand:imagicodium.disableProxy"
   ],
   "contributes": {
     "configuration": {
-      "title": "transformerAI",
+      "title": "imagicodium",
       "properties": {
-        "transformerAI.apiKey": {
+        "imagicodium.apiKey": {
           "type": "string",
           "default": "",
           "description": "API key for AI21 Studio"
         },
-        "transformerAI.proxy": {
+        "imagicodium.proxy": {
           "type": "object",
           "default": null,
           "description": "Proxy configuration (host, port, auth)"
@@ -41,20 +41,20 @@
     },
     "commands": [
       {
-        "command": "transformerai.generateCode",
-        "title": "Сгенерировать код по комментарию"
+        "command": "imagicodium.generateCode",
+        "title": "Generate a code based on a comment"
       },
       {
-        "command": "transformerai.setApiKey",
-        "title": "Установить ключ API для AI21 Studio"
+        "command": "imagicodium.setApiKey",
+        "title": "Install the API key for AI21 Studio"
       },
       {
-        "command": "transformerai.setProxy",
-        "title": "Настроить прокси"
+        "command": "imagicodium.setProxy",
+        "title": "Set up a proxy"
       },
       {
-        "command": "transformerai.disableProxy",
-        "title": "Отключить прокси"
+        "command": "imagicodium.disableProxy",
+        "title": "Disable the proxy"
       }
     ]
   },
