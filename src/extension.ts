@@ -7,9 +7,10 @@ export function activate(context: vscode.ExtensionContext) {
     const initializeClient = () => {
         const config = vscode.workspace.getConfiguration('transformerAI');
         const ai21ApiKey = config.get<string>('apiKey');
+        const proxyConfig = config.get<{ host: string; port: number; auth?: { username: string; password: string } }>('proxy');
 
         if (ai21ApiKey) {
-            ai21Client = new Ai21Client(ai21ApiKey);
+            ai21Client = new Ai21Client(ai21ApiKey, proxyConfig);
         } else {
             ai21Client = null;
         }
@@ -44,6 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    // Команда для установки ключа API
     let setApiKeyDisposable = vscode.commands.registerCommand('transformerai.setApiKey', async () => {
         const apiKey = await vscode.window.showInputBox({
             prompt: 'Введите ключ API для AI21 Studio',
@@ -60,7 +62,44 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    context.subscriptions.push(generateCodeDisposable, setApiKeyDisposable);
+    let setProxyDisposable = vscode.commands.registerCommand('transformerai.setProxy', async () => {
+        const host = await vscode.window.showInputBox({ prompt: 'Введите адрес прокси (например, 127.0.0.1)' });
+        const port = await vscode.window.showInputBox({ prompt: 'Введите порт прокси (например, 8080)' });
+        const username = await vscode.window.showInputBox({ prompt: 'Введите логин (если требуется)' });
+        const password = await vscode.window.showInputBox({ prompt: 'Введите пароль (если требуется)', password: true });
+
+        if (!host || !port) {
+            vscode.window.showErrorMessage('Адрес и порт прокси обязательны.');
+            return;
+        }
+
+        const proxy = {
+            host: host,
+            port: parseInt(port, 10),
+            auth: username && password ? { username, password } : undefined
+        };
+
+        const config = vscode.workspace.getConfiguration('transformerAI');
+        await config.update('proxy', proxy, vscode.ConfigurationTarget.Global);
+
+        initializeClient();
+        vscode.window.showInformationMessage('Прокси успешно настроен.');
+    });
+
+    let disableProxyDisposable = vscode.commands.registerCommand('transformerai.disableProxy', async () => {
+        const config = vscode.workspace.getConfiguration('transformerAI');
+        await config.update('proxy', undefined, vscode.ConfigurationTarget.Global);
+
+        initializeClient();
+        vscode.window.showInformationMessage('Прокси отключен.');
+    });
+
+    context.subscriptions.push(
+        generateCodeDisposable,
+        setApiKeyDisposable,
+        setProxyDisposable,
+        disableProxyDisposable
+    );
 }
 
 export function deactivate() {}
