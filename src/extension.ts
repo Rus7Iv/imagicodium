@@ -5,7 +5,7 @@ export function activate(context: vscode.ExtensionContext) {
     let ai21Client: Ai21Client | null = null;
 
     const initializeClient = () => {
-        const config = vscode.workspace.getConfiguration('transformerAI');
+        const config = vscode.workspace.getConfiguration('imagicodium');
         const ai21ApiKey = config.get<string>('apiKey');
         const proxyConfig = config.get<{ host: string; port: number; auth?: { username: string; password: string } }>('proxy');
 
@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     initializeClient();
 
-    let generateCodeDisposable = vscode.commands.registerCommand('transformerai.generateCode', async () => {
+    let generateCodeDisposable = vscode.commands.registerCommand('imagicodium.generateCode', async () => {
         if (!ai21Client) {
             vscode.window.showErrorMessage('Ключ API не установлен. Пожалуйста, используйте команду "Установить ключ API для AI21 Studio"');
             return;
@@ -46,7 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     // Команда для установки ключа API
-    let setApiKeyDisposable = vscode.commands.registerCommand('transformerai.setApiKey', async () => {
+    let setApiKeyDisposable = vscode.commands.registerCommand('imagicodium.setApiKey', async () => {
         const apiKey = await vscode.window.showInputBox({
             prompt: 'Введите ключ API для AI21 Studio',
             placeHolder: 'API Key',
@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
         });
 
         if (apiKey) {
-            const config = vscode.workspace.getConfiguration('transformerAI');
+            const config = vscode.workspace.getConfiguration('imagicodium');
             await config.update('apiKey', apiKey, vscode.ConfigurationTarget.Global);
 
             initializeClient();
@@ -62,7 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    let setProxyDisposable = vscode.commands.registerCommand('transformerai.setProxy', async () => {
+    let setProxyDisposable = vscode.commands.registerCommand('imagicodium.setProxy', async () => {
         const host = await vscode.window.showInputBox({ prompt: 'Введите адрес прокси (например, 127.0.0.1)' });
         const port = await vscode.window.showInputBox({ prompt: 'Введите порт прокси (например, 8080)' });
         const username = await vscode.window.showInputBox({ prompt: 'Введите логин (если требуется)' });
@@ -79,15 +79,15 @@ export function activate(context: vscode.ExtensionContext) {
             auth: username && password ? { username, password } : undefined
         };
 
-        const config = vscode.workspace.getConfiguration('transformerAI');
+        const config = vscode.workspace.getConfiguration('imagicodium');
         await config.update('proxy', proxy, vscode.ConfigurationTarget.Global);
 
         initializeClient();
         vscode.window.showInformationMessage('Прокси успешно настроен.');
     });
 
-    let disableProxyDisposable = vscode.commands.registerCommand('transformerai.disableProxy', async () => {
-        const config = vscode.workspace.getConfiguration('transformerAI');
+    let disableProxyDisposable = vscode.commands.registerCommand('imagicodium.disableProxy', async () => {
+        const config = vscode.workspace.getConfiguration('imagicodium');
         await config.update('proxy', undefined, vscode.ConfigurationTarget.Global);
 
         initializeClient();
