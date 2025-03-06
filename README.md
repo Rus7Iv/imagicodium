@@ -1,35 +1,35 @@
 # Imagicodium
 
-Это расширение для VS Code, которое использует AI21 Studio API для генерации кода на основе комментариев.
+This is a VS Code extension that uses the AI21 Studio API to generate code based on comments.
 
-## Функциональность
-- Генерация кода по комментариям.
+## Functionality
+- Generate code from comments.
 
-## Получение Api-key
-Получить ключ api можно на сайте https://studio.ai21.com/v2/account/api-key
+## Obtaining an API Key
+You can obtain the API key from the website: [https://studio.ai21.com/v2/account/api-key](https://studio.ai21.com/v2/account/api-key)
 
-## Установка из маркета
-1. Установите расширение через Marketplace.
-2. Добавьте API ключ AI21 Studio в настройках.
+## Usage
+- Run the command `Set API Key for AI21 Studio` and add the obtained API key there.
+- Add a comment in the code, for example: `// Mortgage payment calculator`.
+- Invoke the command `Generate a code based on a comment` through the command palette (Ctrl+Shift+P).
 
-## Установка из репозитория
-- запустите команду для сборки расширения:
-```bash
-vsce package
-```
-- Установите расширение через Extensions -> Install from VSIX
+## Installation from Marketplace
+1. Install the extension via Marketplace.
+2. Add the AI21 Studio API key in the settings.
 
-## Использование
-- Запустите команду `Установить ключ API для AI21 Studio` и добавьте туда полученный ключ API
-- Добавьте комментарий в код, например: `// Калькулятор платежей по ипотеке`.
-- Вызовите команду `Сгенерировать код по комментарию` через командную палитру (Ctrl+Shift+P).
+## Installation from Repository
+- Run the command to build the extension:
+  ```bash
+  vsce package
+  ```
+- Install the extension via Extensions -> Install from VSIX
 
-## В будущих версиях
-- Обучение нейросети на основе кода в проекте.
-- Поддержка нескольких языков
-- Режим "Code reviewer"
-- Обучение нейросети на основе имеющегося кода 
-- Выбор языковых моделей
+## Future Versions
+- Training the neural network based on code in the project.
+- Support for multiple languages
+- "Code reviewer" mode
+- Training the neural network based on existing code
+- Selection of language models
 
-## Лицензия
-Этот проект распространяется под лицензией MIT. Подробности см. в файле [LICENSE](LICENSE).
+## License
+This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for details.

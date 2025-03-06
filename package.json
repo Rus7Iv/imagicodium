@@ -1,9 +1,9 @@
 {
   "name": "imagicodium",
   "displayName": "Imagicodium Assistant",
-  "description": "Помощник для генерации кода",
+  "description": "Code Generation Assistant",
   "icon": "images/logo.png",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher": "Rus7Iv",
   "license": "MIT",
   "repository": {
@@ -42,19 +42,19 @@
     "commands": [
       {
         "command": "imagicodium.generateCode",
-        "title": "Сгенерировать код по комментарию"
+        "title": "Generate a code based on a comment"
       },
       {
         "command": "imagicodium.setApiKey",
-        "title": "Установить ключ API для AI21 Studio"
+        "title": "Install the API key for AI21 Studio"
       },
       {
         "command": "imagicodium.setProxy",
-        "title": "Настроить прокси"
+        "title": "Set up a proxy"
       },
       {
         "command": "imagicodium.disableProxy",
-        "title": "Отключить прокси"
+        "title": "Disable the proxy"
       }
     ]
   },

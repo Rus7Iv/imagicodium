@@ -21,7 +21,7 @@ export class Ai21Client {
                     messages: [
                         {
                             role: "user",
-                            content: `Напиши код на языке ${language} для: ${prompt}. Учти, что нужно написать только код и ничего кроме кода (без ковычек и подписей)`
+                            content: `Write the code in ${language} for: ${prompt}. Keep in mind that you only need to write the code and nothing but the code (without quotes and signatures)`
                         }
                     ],
                     model: "jamba-instruct-preview",
