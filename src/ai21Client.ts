@@ -24,7 +24,7 @@ export class Ai21Client {
                             content: `Write the code in ${language} for: ${prompt}. Keep in mind that you only need to write the code and nothing but the code (without quotes and signatures)`
                         }
                     ],
-                    model: "jamba-instruct-preview",
+                    model: "jamba-large-1.6",
                     temperature: 0.5,
                     max_tokens: 1024,
                     top_p: 1,
