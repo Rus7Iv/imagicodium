@@ -1,21 +1,21 @@
 # Imagicodium
 
-This is a VS Code extension that uses the AI21 Studio API to generate code based on comments.
+This is a VS Code extension that uses the Mistral AI API to generate code based on comments.
 
 ## Functionality
 - Generate code from comments.
 
 ## Obtaining an API Key
-You can obtain the API key from the website: [https://studio.ai21.com/v2/account/api-key](https://studio.ai21.com/v2/account/api-key)
+You can obtain the API key from the website: [https://console.mistral.ai/home](https://console.mistral.ai/home)
 
 ## Usage
-- Run the command `Set API Key for AI21 Studio` and add the obtained API key there.
+- Run the command `Install the API key for Mistral AI` and add the obtained API key there.
 - Add a comment in the code, for example: `// Mortgage payment calculator`.
 - Invoke the command `Generate a code based on a comment` through the command palette (Ctrl+Shift+P).
 
 ## Installation from Marketplace
 1. Install the extension via Marketplace.
-2. Add the AI21 Studio API key in the settings.
+2. Add the Mistral AI API key in the settings.
 
 ## Installation from Repository
 - Run the command to build the extension:
