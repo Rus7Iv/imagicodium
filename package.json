@@ -1,9 +1,9 @@
 {
   "name": "imagicodium",
   "displayName": "Imagicodium Assistant",
-  "description": "Code Generation Assistant",
+  "description": "Generate code from natural language comments using Mistral AI",
   "icon": "images/logo.png",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "publisher": "Rus7Iv",
   "license": "MIT",
   "repository": {
@@ -30,7 +30,7 @@
         "imagicodium.apiKey": {
           "type": "string",
           "default": "",
-          "description": "API key for AI21 Studio"
+          "description": "API key for Mistral AI"
         },
         "imagicodium.proxy": {
           "type": "object",
@@ -42,11 +42,11 @@
     "commands": [
       {
         "command": "imagicodium.generateCode",
-        "title": "Generate a code based on a comment"
+        "title": "Generate code from comment"
       },
       {
         "command": "imagicodium.setApiKey",
-        "title": "Install the API key for AI21 Studio"
+        "title": "Install the API key for Mistral AI"
       },
       {
         "command": "imagicodium.setProxy",
@@ -78,7 +78,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "axios": "^1.7.9",
-    "openai": "^4.79.1"
+    "axios": "^1.7.9"
   }
 }

@@ -1,8 +1,8 @@
 import axios, { AxiosProxyConfig } from 'axios';
 
-const AI21_API_URL = 'https://api.ai21.com/studio/v1/chat/completions';
+const MISTRAL_API_URL = 'https://api.mistral.ai/v1/chat/completions';
 
-export class Ai21Client {
+export class MistralClient {
     private apiKey: string;
     private proxy?: AxiosProxyConfig;
 
@@ -13,30 +13,25 @@ export class Ai21Client {
 
     async generateCode(prompt: string, language: string): Promise<string> {
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
             const response = await axios.post(
-                AI21_API_URL,
+                MISTRAL_API_URL,
                 {
+                    model: 'mistral-large-latest',
                     messages: [
                         {
-                            role: "user",
-                            content: `Write the code in ${language} for: ${prompt}. Keep in mind that you only need to write the code and nothing but the code (without quotes and signatures)`
+                            role: 'user',
+                            content: `Write code in ${language} for the following description. Do not include comments or explanations. Just the code:\n${prompt}`
                         }
                     ],
-                    model: "jamba-instruct-preview",
-                    temperature: 0.5,
+                    temperature: 0.7,
                     max_tokens: 1024,
-                    top_p: 1,
-                    stream: false,
-                    stop: null
                 },
                 {
                     headers: {
-                        'Authorization': `Bearer ${this.apiKey}`,
-                        'Content-Type': 'application/json'
+                        Authorization: `Bearer ${this.apiKey}`,
+                        'Content-Type': 'application/json',
                     },
-                    proxy: this.proxy
+                    proxy: this.proxy,
                 }
             );
 
@@ -45,7 +40,7 @@ export class Ai21Client {
 
             return cleanedCode;
         } catch (error) {
-            console.error('Ошибка генерации кода:', error);
+            console.error('Ошибка генерации кода через Mistral:', error);
             throw error;
         }
     }
