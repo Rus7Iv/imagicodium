@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "API密钥未设置。请使用“为Mistral AI安装API密钥”命令。",
+  "codeGenerationFailed": "代码生成失败。请查看控制台以获取详细信息。",
+  "enterApiKeyPrompt": "输入您的Mistral API密钥",
+  "apiKeySaved": "Mistral API密钥保存成功！",
+  "proxyHostPrompt": "输入代理主机（例如127.0.0.1）",
+  "proxyPortPrompt": "输入代理端口（例如8080）",
+  "proxyUserPrompt": "输入用户名（如果需要）",
+  "proxyPassPrompt": "输入密码（如果需要）",
+  "proxyHostPortRequired": "需要代理主机和端口。",
+  "proxyConfigured": "代理配置成功！",
+  "proxyDisabled": "代理已禁用。"
+}

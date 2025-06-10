@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "لم يتم تعيين مفتاح API. يرجى استخدام الأمر \"تثبيت مفتاح API لـ Mistral AI\".",
+  "codeGenerationFailed": "فشل توليد الكود. راجع وحدة التحكم لمزيد من التفاصيل.",
+  "enterApiKeyPrompt": "أدخل مفتاح API الخاص بك",
+  "apiKeySaved": "تم حفظ مفتاح API بنجاح!",
+  "proxyHostPrompt": "أدخل مضيف البروكسي (مثل 127.0.0.1)",
+  "proxyPortPrompt": "أدخل منفذ البروكسي (مثل 8080)",
+  "proxyUserPrompt": "أدخل اسم المستخدم (إذا لزم الأمر)",
+  "proxyPassPrompt": "أدخل كلمة المرور (إذا لزم الأمر)",
+  "proxyHostPortRequired": "مضيف البروكسي والمنفذ مطلوبان.",
+  "proxyConfigured": "تم تكوين البروكسي بنجاح!",
+  "proxyDisabled": "البروكسي معطل."
+}

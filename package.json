@@ -1,7 +1,7 @@
 {
   "name": "imagicodium",
   "displayName": "Imagicodium Assistant",
-  "description": "Generate code from natural language comments using Mistral AI",
+  "description": "%description%",
   "icon": "images/logo.png",
   "version": "0.1.0",
   "publisher": "Rus7Iv",
@@ -30,31 +30,31 @@
         "imagicodium.apiKey": {
           "type": "string",
           "default": "",
-          "description": "API key for Mistral AI"
+          "description": "%imagicodium.apiKey.description%"
         },
         "imagicodium.proxy": {
           "type": "object",
           "default": null,
-          "description": "Proxy configuration (host, port, auth)"
+          "description": "%imagicodium.proxy.description%"
         }
       }
     },
     "commands": [
       {
         "command": "imagicodium.generateCode",
-        "title": "Generate code from comment"
+        "title": "%command.generateCode%"
       },
       {
         "command": "imagicodium.setApiKey",
-        "title": "Install the API key for Mistral AI"
+        "title": "%command.setApiKey%"
       },
       {
         "command": "imagicodium.setProxy",
-        "title": "Set up a proxy"
+        "title": "%command.setProxy%"
       },
       {
         "command": "imagicodium.disableProxy",
-        "title": "Disable the proxy"
+        "title": "%command.disableProxy%"
       }
     ]
   },

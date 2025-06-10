@@ -1,0 +1,9 @@
+{
+  "description": "使用Mistral AI从自然语言注释生成代码",
+  "command.generateCode": "从注释生成代码",
+  "command.setApiKey": "安装Mistral AI的API密钥",
+  "command.setProxy": "设置代理",
+  "command.disableProxy": "禁用代理",
+  "imagicodium.apiKey.description": "Mistral AI的API密钥",
+  "imagicodium.proxy.description": "代理配置（主机、端口、身份验证）"
+}

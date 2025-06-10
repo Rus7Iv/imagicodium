@@ -1,0 +1,9 @@
+{
+  "description": "Mistral AI का उपयोग करके प्राकृतिक भाषा टिप्पणियों से कोड उत्पन्न करें",
+  "command.generateCode": "टिप्पणी से कोड उत्पन्न करें",
+  "command.setApiKey": "Mistral AI के लिए API कुंजी इंस्टॉल करें",
+  "command.setProxy": "प्रॉक्सी सेट करें",
+  "command.disableProxy": "प्रॉक्सी अक्षम करें",
+  "imagicodium.apiKey.description": "Mistral AI के लिए API कुंजी",
+  "imagicodium.proxy.description": "प्रॉक्सी कॉन्फ़िगरेशन (होस्ट, पोर्ट, प्रमाणीकरण)"
+}

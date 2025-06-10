@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "A chave da API não está definida. Por favor, use o comando \"Instalar Chave da API para Mistral AI\".",
+  "codeGenerationFailed": "A geração de código falhou. Verifique o console para mais detalhes.",
+  "enterApiKeyPrompt": "Insira sua chave da API Mistral",
+  "apiKeySaved": "Chave da API Mistral salva com sucesso!",
+  "proxyHostPrompt": "Insira o host do proxy (ex. 127.0.0.1)",
+  "proxyPortPrompt": "Insira a porta do proxy (ex. 8080)",
+  "proxyUserPrompt": "Insira o nome de usuário (se necessário)",
+  "proxyPassPrompt": "Insira a senha (se necessário)",
+  "proxyHostPortRequired": "Host e porta do proxy são obrigatórios.",
+  "proxyConfigured": "Proxy configurado com sucesso!",
+  "proxyDisabled": "Proxy desativado."
+}

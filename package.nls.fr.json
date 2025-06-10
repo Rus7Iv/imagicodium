@@ -1,0 +1,9 @@
+{
+  "description": "Générer du code à partir de commentaires en langage naturel en utilisant Mistral AI",
+  "command.generateCode": "Générer du code à partir du commentaire",
+  "command.setApiKey": "Installer la clé API pour Mistral AI",
+  "command.setProxy": "Configurer un proxy",
+  "command.disableProxy": "Désactiver le proxy",
+  "imagicodium.apiKey.description": "Clé API pour Mistral AI",
+  "imagicodium.proxy.description": "Configuration du proxy (hôte, port, authentification)"
+}

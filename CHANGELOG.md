@@ -1,9 +1,18 @@
-# Change Log
+# Changelog
 
-All notable changes to the "imagicodium" extension will be documented in this file.
+## [0.1.0] - 2025-06-11
+### Added
+- Introduced Mistral AI for enhanced functionality.
+- Support for the following languages:
+  - Russian
+  - French
+  - German
+  - Spanish
+  - Chinese
+  - Arabic
+  - Portuguese
+  - Japanese
+  - Hindi
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+### Deprecated
+- The Jamba language model is now deprecated.

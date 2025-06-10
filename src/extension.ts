@@ -1,7 +1,10 @@
 import * as vscode from 'vscode';
 import { MistralClient } from './mistralClient';
+import { loadLocalization, t } from './i18n';
 
 export function activate(context: vscode.ExtensionContext) {
+    loadLocalization(context);
+
     let mistralClient: MistralClient | null = null;
 
     const initializeClient = () => {
@@ -20,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     const generateCodeDisposable = vscode.commands.registerCommand('imagicodium.generateCode', async () => {
         if (!mistralClient) {
-            vscode.window.showErrorMessage('The API key is not set. Please use the "Install API Key for Mistral AI" command.');
+            vscode.window.showErrorMessage(t('apiKeyNotSet'));
             return;
         }
 
@@ -38,13 +41,13 @@ export function activate(context: vscode.ExtensionContext) {
                 editBuilder.insert(selection.end, `\n${generatedCode}`);
             });
         } catch (error) {
-            vscode.window.showErrorMessage('Code generation failed. Check console for details.');
+            vscode.window.showErrorMessage(t('codeGenerationFailed'));
         }
     });
 
     const setApiKeyDisposable = vscode.commands.registerCommand('imagicodium.setApiKey', async () => {
         const apiKey = await vscode.window.showInputBox({
-            prompt: 'Enter your Mistral API key',
+            prompt: t('enterApiKeyPrompt'),
             placeHolder: 'sk-...',
             password: true
         });
@@ -54,18 +57,18 @@ export function activate(context: vscode.ExtensionContext) {
             await config.update('apiKey', apiKey, vscode.ConfigurationTarget.Global);
 
             initializeClient();
-            vscode.window.showInformationMessage('Mistral API key saved successfully!');
+            vscode.window.showInformationMessage(t('apiKeySaved'));
         }
     });
 
     const setProxyDisposable = vscode.commands.registerCommand('imagicodium.setProxy', async () => {
-        const host = await vscode.window.showInputBox({ prompt: 'Enter proxy host (e.g. 127.0.0.1)' });
-        const port = await vscode.window.showInputBox({ prompt: 'Enter proxy port (e.g. 8080)' });
-        const username = await vscode.window.showInputBox({ prompt: 'Enter username (if required)' });
-        const password = await vscode.window.showInputBox({ prompt: 'Enter password (if required)', password: true });
+        const host = await vscode.window.showInputBox({ prompt: t('proxyHostPrompt') });
+        const port = await vscode.window.showInputBox({ prompt: t('proxyPortPrompt') });
+        const username = await vscode.window.showInputBox({ prompt: t('proxyUserPrompt') });
+        const password = await vscode.window.showInputBox({ prompt: t('proxyPassPrompt'), password: true });
 
         if (!host || !port) {
-            vscode.window.showErrorMessage('Proxy host and port are required.');
+            vscode.window.showErrorMessage(t('proxyHostPortRequired'));
             return;
         }
 
@@ -79,7 +82,7 @@ export function activate(context: vscode.ExtensionContext) {
         await config.update('proxy', proxy, vscode.ConfigurationTarget.Global);
 
         initializeClient();
-        vscode.window.showInformationMessage('Proxy configured successfully!');
+        vscode.window.showInformationMessage(t('proxyConfigured'));
     });
 
     const disableProxyDisposable = vscode.commands.registerCommand('imagicodium.disableProxy', async () => {
@@ -87,7 +90,7 @@ export function activate(context: vscode.ExtensionContext) {
         await config.update('proxy', undefined, vscode.ConfigurationTarget.Global);
 
         initializeClient();
-        vscode.window.showInformationMessage('Proxy disabled.');
+        vscode.window.showInformationMessage(t('proxyDisabled'));
     });
 
     context.subscriptions.push(

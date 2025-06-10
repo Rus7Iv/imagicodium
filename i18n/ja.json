@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "APIキーが設定されていません。「Mistral AIのAPIキーをインストール」コマンドを使用してください。",
+  "codeGenerationFailed": "コード生成に失敗しました。詳細についてはコンソールを参照してください。",
+  "enterApiKeyPrompt": "Mistral APIキーを入力してください",
+  "apiKeySaved": "Mistral APIキーが正常に保存されました！",
+  "proxyHostPrompt": "プロキシホストを入力してください（例：127.0.0.1）",
+  "proxyPortPrompt": "プロキシポートを入力してください（例：8080）",
+  "proxyUserPrompt": "ユーザー名を入力してください（必要な場合）",
+  "proxyPassPrompt": "パスワードを入力してください（必要な場合）",
+  "proxyHostPortRequired": "プロキシホストとポートが必要です。",
+  "proxyConfigured": "プロキシが正常に設定されました！",
+  "proxyDisabled": "プロキシが無効になっています。"
+}

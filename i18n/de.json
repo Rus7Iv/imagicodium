@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "Der API-Schlüssel ist nicht gesetzt. Bitte verwenden Sie den Befehl \"Mistral AI API-Schlüssel installieren\".",
+  "codeGenerationFailed": "Codegenerierung fehlgeschlagen. Details in der Konsole prüfen.",
+  "enterApiKeyPrompt": "Geben Sie Ihren Mistral API-Schlüssel ein",
+  "apiKeySaved": "Mistral API-Schlüssel erfolgreich gespeichert!",
+  "proxyHostPrompt": "Geben Sie den Proxy-Host ein (z.B. 127.0.0.1)",
+  "proxyPortPrompt": "Geben Sie den Proxy-Port ein (z.B. 8080)",
+  "proxyUserPrompt": "Geben Sie den Benutzernamen ein (falls erforderlich)",
+  "proxyPassPrompt": "Geben Sie das Passwort ein (falls erforderlich)",
+  "proxyHostPortRequired": "Proxy-Host und -Port sind erforderlich.",
+  "proxyConfigured": "Proxy erfolgreich konfiguriert!",
+  "proxyDisabled": "Proxy deaktiviert."
+}
