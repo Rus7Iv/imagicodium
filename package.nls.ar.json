@@ -1,0 +1,9 @@
+{
+  "description": "إنشاء التعليمات البرمجية من التعليقات بلغة طبيعية باستخدام Mistral AI",
+  "command.generateCode": "إنشاء التعليمات البرمجية من التعليق",
+  "command.setApiKey": "تثبيت مفتاح API لـ Mistral AI",
+  "command.setProxy": "إعداد وكيل",
+  "command.disableProxy": "تعطيل الوكيل",
+  "imagicodium.apiKey.description": "مفتاح API لـ Mistral AI",
+  "imagicodium.proxy.description": "تكوين الوكيل (المضيف، المنفذ، المصادقة)"
+}

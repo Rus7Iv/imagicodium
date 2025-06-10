@@ -1,0 +1,9 @@
+{
+  "description": "Generieren Sie Code aus natürlichen Sprachkommentaren mit Mistral AI",
+  "command.generateCode": "Code aus Kommentar generieren",
+  "command.setApiKey": "API-Schlüssel für Mistral AI installieren",
+  "command.setProxy": "Proxy einrichten",
+  "command.disableProxy": "Proxy deaktivieren",
+  "imagicodium.apiKey.description": "API-Schlüssel für Mistral AI",
+  "imagicodium.proxy.description": "Proxy-Konfiguration (Host, Port, Authentifizierung)"
+}

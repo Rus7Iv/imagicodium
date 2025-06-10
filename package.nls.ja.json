@@ -1,0 +1,9 @@
+{
+  "description": "Mistral AIを使用して自然言語のコメントからコードを生成",
+  "command.generateCode": "コメントからコードを生成",
+  "command.setApiKey": "Mistral AIのAPIキーをインストール",
+  "command.setProxy": "プロキシを設定",
+  "command.disableProxy": "プロキシを無効化",
+  "imagicodium.apiKey.description": "Mistral AIのAPIキー",
+  "imagicodium.proxy.description": "プロキシ設定（ホスト、ポート、認証）"
+}
