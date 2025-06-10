@@ -1,0 +1,11 @@
+{
+  "description": "Генерируйте код из комментариев на естественном языке с помощью Mistral AI",
+
+  "command.generateCode": "Генерировать код из комментария",
+  "command.setApiKey": "Установить API ключ для Mistral AI",
+  "command.setProxy": "Настроить прокси",
+  "command.disableProxy": "Отключить прокси",
+
+  "imagicodium.apiKey.description": "Ключ API для Mistral AI",
+  "imagicodium.proxy.description": "Настройка прокси-сервера (хост, порт, авторизация)"
+}

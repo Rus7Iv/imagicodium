@@ -1,0 +1,13 @@
+{
+  "apiKeyNotSet": "API ключ не установлен. Пожалуйста, используйте команду «Установить API ключ для Mistral AI».",
+  "codeGenerationFailed": "Генерация кода не удалась. Проверьте консоль для деталей.",
+  "enterApiKeyPrompt": "Введите ваш API ключ Mistral",
+  "apiKeySaved": "API ключ Mistral успешно сохранён!",
+  "proxyHostPrompt": "Введите хост прокси (например, 127.0.0.1)",
+  "proxyPortPrompt": "Введите порт прокси (например, 8080)",
+  "proxyUserPrompt": "Введите имя пользователя (если требуется)",
+  "proxyPassPrompt": "Введите пароль (если требуется)",
+  "proxyHostPortRequired": "Требуется указать хост и порт прокси.",
+  "proxyConfigured": "Прокси успешно настроен!",
+  "proxyDisabled": "Прокси отключён."
+}
