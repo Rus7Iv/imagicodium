@@ -9,5 +9,9 @@
   "proxyPassPrompt": "Enter password (if required)",
   "proxyHostPortRequired": "Proxy host and port are required.",
   "proxyConfigured": "Proxy configured successfully!",
-  "proxyDisabled": "Proxy disabled."
+  "proxyDisabled": "Proxy disabled.",
+  "selectContextFiles": "Select context files",
+  "noFilesSelected": "No files selected",
+  "contextLoaded": "Context successfully loaded and will be used for code generation",
+  "contextLoadFailed": "Failed to load context from files"
 }

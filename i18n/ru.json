@@ -9,5 +9,9 @@
   "proxyPassPrompt": "Введите пароль (если требуется)",
   "proxyHostPortRequired": "Требуется указать хост и порт прокси.",
   "proxyConfigured": "Прокси успешно настроен!",
-  "proxyDisabled": "Прокси отключён."
+  "proxyDisabled": "Прокси отключён.",
+  "selectContextFiles": "Выберите файлы с контекстом",
+  "noFilesSelected": "Файлы не выбраны.",
+  "contextLoaded": "Контекст успешно загружен и будет использоваться при генерации кода.",
+  "contextLoadFailed": "Не удалось загрузить контекст из файлов."
 }

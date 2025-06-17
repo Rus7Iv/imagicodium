@@ -93,11 +93,49 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showInformationMessage(t('proxyDisabled'));
     });
 
+    const contextualizedDisposable = vscode.commands.registerCommand('imagicodium.contextualized', async () => {
+        const files = await vscode.window.showOpenDialog({
+            canSelectMany: true,
+            openLabel: t('selectContextFiles'),
+            filters: {
+                'Popular Code Files': ['ts', 'js', 'py', 'java', 'cpp', 'cs', 'go', 'rs', 'php', 'rb', 'swift', 'kt'],
+                'Configuration Files': ['json', 'yaml', 'yml', 'xml', 'toml', 'env'],
+                'Web Files': ['html', 'css', 'scss', 'less', 'vue', 'jsx', 'tsx'],
+                'Documentation': ['md', 'txt', 'rst'],
+                'All Files': ['*']
+            }
+        });
+
+        if (!files || files.length === 0) {
+            vscode.window.showInformationMessage(t('noFilesSelected'));
+            return;
+        }
+
+        try {
+            const fileContents = await Promise.all(
+                files.map(uri => vscode.workspace.fs.readFile(uri).then(buffer => buffer.toString()))
+            );
+
+            const contextCode = fileContents.join('\n\n// -------- Next File --------\n\n');
+
+            if (mistralClient) {
+                mistralClient.setContext(contextCode);
+                vscode.window.showInformationMessage(t('contextLoaded'));
+            } else {
+                vscode.window.showErrorMessage(t('apiKeyNotSet'));
+            }
+        } catch (error) {
+            vscode.window.showErrorMessage(t('contextLoadFailed'));
+            console.error('Ошибка загрузки контекста:', error);
+        }
+    });
+
     context.subscriptions.push(
         generateCodeDisposable,
         setApiKeyDisposable,
         setProxyDisposable,
-        disableProxyDisposable
+        disableProxyDisposable,
+        contextualizedDisposable
     );
 }
 

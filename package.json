@@ -3,7 +3,7 @@
   "displayName": "Imagicodium Assistant",
   "description": "%description%",
   "icon": "images/logo.png",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "Rus7Iv",
   "license": "MIT",
   "repository": {
@@ -21,7 +21,8 @@
     "onCommand:imagicodium.generateCode",
     "onCommand:imagicodium.setApiKey",
     "onCommand:imagicodium.setProxy",
-    "onCommand:imagicodium.disableProxy"
+    "onCommand:imagicodium.disableProxy",
+    "onCommand:imagicodium.contextualized"
   ],
   "contributes": {
     "configuration": {
@@ -55,6 +56,10 @@
       {
         "command": "imagicodium.disableProxy",
         "title": "%command.disableProxy%"
+      },
+      {
+        "command": "imagicodium.contextualized",
+        "title": "%command.contextualized%"
       }
     ]
   },

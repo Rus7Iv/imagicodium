@@ -9,5 +9,9 @@
   "proxyPassPrompt": "输入密码（如果需要）",
   "proxyHostPortRequired": "需要代理主机和端口。",
   "proxyConfigured": "代理配置成功！",
-  "proxyDisabled": "代理已禁用。"
+  "proxyDisabled": "代理已禁用。",
+  "selectContextFiles": "选择上下文文件",
+  "noFilesSelected": "未选择文件",
+  "contextLoaded": "上下文已成功加载并将用于代码生成",
+  "contextLoadFailed": "无法从文件加载上下文"
 }

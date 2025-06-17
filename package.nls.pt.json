@@ -5,5 +5,6 @@
   "command.setProxy": "Configurar um proxy",
   "command.disableProxy": "Desativar o proxy",
   "imagicodium.apiKey.description": "Chave da API para Mistral AI",
-  "imagicodium.proxy.description": "Configuração do proxy (host, porta, autenticação)"
+  "imagicodium.proxy.description": "Configuração do proxy (host, porta, autenticação)",
+  "command.contextualized": "Treinar modelo com base no código"
 }

@@ -5,5 +5,6 @@
   "command.setProxy": "प्रॉक्सी सेट करें",
   "command.disableProxy": "प्रॉक्सी अक्षम करें",
   "imagicodium.apiKey.description": "Mistral AI के लिए API कुंजी",
-  "imagicodium.proxy.description": "प्रॉक्सी कॉन्फ़िगरेशन (होस्ट, पोर्ट, प्रमाणीकरण)"
+  "imagicodium.proxy.description": "प्रॉक्सी कॉन्फ़िगरेशन (होस्ट, पोर्ट, प्रमाणीकरण)",
+  "command.contextualized": "कोड के आधार पर मॉडल प्रशिक्षण"
 }

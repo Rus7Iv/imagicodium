@@ -5,5 +5,6 @@
   "command.setProxy": "إعداد وكيل",
   "command.disableProxy": "تعطيل الوكيل",
   "imagicodium.apiKey.description": "مفتاح API لـ Mistral AI",
-  "imagicodium.proxy.description": "تكوين الوكيل (المضيف، المنفذ، المصادقة)"
+  "imagicodium.proxy.description": "تكوين الوكيل (المضيف، المنفذ، المصادقة)",
+  "command.contextualized": "تدريب النموذج بناءً على الكود"
 }
