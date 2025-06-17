@@ -20,7 +20,12 @@ export class MistralClient {
                     messages: [
                         {
                             role: 'user',
-                            content: `Write code in ${language} for the following description. Do not include comments or explanations. Just the code:\n${prompt}`
+                            content: `You are a professional developer. Your task is to generate correct, concise, and readable code, strictly following the given task. Do not add any extra comments or explanations. Just output the ready code fragment.
+                                Programming language: ${language}
+                                Coding style: modern, using ${language}-specific best practices
+                                Do not include comments or explanations. Just the code.
+                                Generate code for the following description:
+                                ${prompt}`
                         }
                     ],
                     temperature: 0.7,
