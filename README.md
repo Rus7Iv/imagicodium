@@ -25,10 +25,7 @@ You can obtain the API key from the website: [https://console.mistral.ai/home](h
 - Install the extension via Extensions -> Install from VSIX
 
 ## Future Versions
-- Training the neural network based on code in the project.
-- Support for multiple languages
 - "Code reviewer" mode
-- Training the neural network based on existing code
 - Selection of language models
 
 ## License
