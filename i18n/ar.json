@@ -9,5 +9,9 @@
   "proxyPassPrompt": "أدخل كلمة المرور (إذا لزم الأمر)",
   "proxyHostPortRequired": "مضيف البروكسي والمنفذ مطلوبان.",
   "proxyConfigured": "تم تكوين البروكسي بنجاح!",
-  "proxyDisabled": "البروكسي معطل."
+  "proxyDisabled": "البروكسي معطل.",
+  "selectContextFiles": "حدد الملفات ذات السياق",
+  "noFilesSelected": "لم يتم تحديد أي ملفات",
+  "contextLoaded": "تم تحميل السياق بنجاح وسيتم استخدامه عند إنشاء التعليمات البرمجية",
+  "contextLoadFailed": "فشل تحميل السياق من الملفات"
 }

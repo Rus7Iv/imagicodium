@@ -5,5 +5,6 @@
   "command.setProxy": "プロキシを設定",
   "command.disableProxy": "プロキシを無効化",
   "imagicodium.apiKey.description": "Mistral AIのAPIキー",
-  "imagicodium.proxy.description": "プロキシ設定（ホスト、ポート、認証）"
+  "imagicodium.proxy.description": "プロキシ設定（ホスト、ポート、認証）",
+  "command.contextualized": "コードに基づくモデルトレーニング"
 }

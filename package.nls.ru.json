@@ -7,5 +7,7 @@
   "command.disableProxy": "Отключить прокси",
 
   "imagicodium.apiKey.description": "Ключ API для Mistral AI",
-  "imagicodium.proxy.description": "Настройка прокси-сервера (хост, порт, авторизация)"
+  "imagicodium.proxy.description": "Настройка прокси-сервера (хост, порт, авторизация)",
+
+  "command.contextualized": "Обучение модели на основе кода"
 }

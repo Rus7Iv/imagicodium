@@ -9,5 +9,9 @@
   "proxyPassPrompt": "Ingrese la contraseña (si es requerida)",
   "proxyHostPortRequired": "Se requieren el host y el puerto del proxy.",
   "proxyConfigured": "¡Proxy configurado con éxito!",
-  "proxyDisabled": "Proxy deshabilitado."
+  "proxyDisabled": "Proxy deshabilitado.",
+  "selectContextFiles": "Seleccionar archivos de contexto",
+  "noFilesSelected": "No se seleccionaron archivos",
+  "contextLoaded": "Contexto cargado exitosamente y se usará para la generación de código",
+  "contextLoadFailed": "Error al cargar el contexto de los archivos"
 }

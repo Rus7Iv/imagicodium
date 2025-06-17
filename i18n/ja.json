@@ -9,5 +9,9 @@
   "proxyPassPrompt": "パスワードを入力してください（必要な場合）",
   "proxyHostPortRequired": "プロキシホストとポートが必要です。",
   "proxyConfigured": "プロキシが正常に設定されました！",
-  "proxyDisabled": "プロキシが無効になっています。"
+  "proxyDisabled": "プロキシが無効になっています。",
+  "selectContextFiles": "コンテキストファイルを選択",
+  "noFilesSelected": "ファイルが選択されていません",
+  "contextLoaded": "コンテキストが正常にロードされ、コード生成に使用されます",
+  "contextLoadFailed": "ファイルからのコンテキストのロードに失敗しました"
 }

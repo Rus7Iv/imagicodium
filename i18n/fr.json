@@ -9,5 +9,9 @@
   "proxyPassPrompt": "Entrez le mot de passe (si requis)",
   "proxyHostPortRequired": "L'hôte et le port du proxy sont requis.",
   "proxyConfigured": "Proxy configuré avec succès !",
-  "proxyDisabled": "Proxy désactivé."
+  "proxyDisabled": "Proxy désactivé.",
+  "selectContextFiles": "Sélectionner les fichiers de contexte",
+  "noFilesSelected": "Aucun fichier sélectionné",
+  "contextLoaded": "Contexte chargé avec succès et sera utilisé pour la génération de code",
+  "contextLoadFailed": "Échec du chargement du contexte à partir des fichiers"
 }

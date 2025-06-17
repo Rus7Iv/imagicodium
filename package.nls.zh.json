@@ -5,5 +5,6 @@
   "command.setProxy": "设置代理",
   "command.disableProxy": "禁用代理",
   "imagicodium.apiKey.description": "Mistral AI的API密钥",
-  "imagicodium.proxy.description": "代理配置（主机、端口、身份验证）"
+  "imagicodium.proxy.description": "代理配置（主机、端口、身份验证）",
+  "command.contextualized": "基于代码训练模型"
 }
